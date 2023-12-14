@@ -4,7 +4,7 @@ import { Link } from "react-router-dom"
 const MenuLink = ({ text, link }: { text: string, link: string }) => {
     return (
         <Text display={'block'} maxWidth={'100%'} textAlign={'center'} m={2}
-            fontSize={{ base: 'xl' }}>
+            fontSize={{ base: 'xl' }} fontWeight={'bold'}>
             <Link to={link}>{text}</Link>
         </Text>
     )

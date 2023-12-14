@@ -13,7 +13,7 @@ const ExperienceBlock = (props: ExperienceBlockProps) => {
     return (
         <HStack display={'flex'} justifyContent={'center'} alignItems={'flex-start'} spacing={8}
             fontSize={{ base: 'xs', sm: 'md', md: 'l' }}>
-            <Text color={'grey'} minWidth={'20%'}>
+            <Text fontWeight={'bold'} color={'grey'} minWidth={'20%'}>
                 {props.startAndEndDateText}
             </Text>
             <Stack display={'flex'} justifyContent={'center'}>
