@@ -37,7 +37,7 @@ const ProjectCard = (props: ProjectCardProps) => {
                     </Text>
                     <Box display={'inline-block'}>
                         {props.tools.map((tool) => (
-                            <Tag size={{ base: 'xs', sm: 'sm', md: 'md' }} key={tool} mt={4} mr={4} p={2} colorScheme={'teal'}>{tool}</Tag>
+                            <Tag size={{ base: 'xs', sm: 'sm', md: 'md' }} key={tool} mt={4} mr={4} p={2} colorScheme={'orange'} fontWeight={'medium'}>{tool}</Tag>
                         ))}
                     </Box>
                 </Stack>
