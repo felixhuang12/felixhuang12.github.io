@@ -27,7 +27,7 @@ const ProjectCard = (props: ProjectCardProps) => {
                 objectFit={'contain'}
                 alignSelf={{ base: 'center', md: 'flex-start' }}
             />
-            <CardBody ml={{ base: 0, md: 8 }} mt={{ base: 8, md: 0 }} p={0}>
+            <CardBody ml={{ base: 0, md: 8 }} mt={{ base: 8, md: 0 }} p={1}>
                 <Stack>
                     <Heading>
                         {props.title}
