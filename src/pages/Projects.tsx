@@ -1,4 +1,4 @@
-import { Card, CardBody, Heading, Image, Stack, Text, Box, Tag, AspectRatio } from "@chakra-ui/react"
+import { Card, CardBody, Heading, Image, Stack, Text, Box, Tag } from "@chakra-ui/react"
 import Navbar from "../components/Navbar"
 
 interface ProjectCardProps {
@@ -54,22 +54,16 @@ const Projects = () => {
                 imageSrc="/assets/nba_comps_dashboard.png"
                 imageAlt="NBA Comparisons dashboard"
                 title="NBA Comparisons"
-                description="NBA Comparisons NBA ComparisonsNBA ComparisonsNBA ComparisonsNBA ComparisonsNBA ComparisonsNBA ComparisonsNBA Comparisons \
-                NBA ComparisonsNBA ComparisonsNBA ComparisonsNBA ComparisonsNBA ComparisonsNBA ComparisonsNBA ComparisonsNBA ComparisonsNBA Comparisons\
-                NBA ComparisonsNBA ComparisonsNBA ComparisonsNBA ComparisonsNBA ComparisonsNBA ComparisonsNBA ComparisonsNBA ComparisonsNBA Comparisons\
-                NBA ComparisonsNBA ComparisonsNBA ComparisonsNBA ComparisonsNBA ComparisonsNBA ComparisonsNBA ComparisonsNBA ComparisonsNBA Comparisons\
-                NBA ComparisonsNBA ComparisonsNBA ComparisonsNBA ComparisonsNBA ComparisonsNBA ComparisonsNBA ComparisonsNBA ComparisonsNBA Comparisons\
-                NBA ComparisonsNBA ComparisonsNBA ComparisonsNBA ComparisonsNBA ComparisonsNBA ComparisonsNBA ComparisonsNBA ComparisonsNBA Comparisons\
-                NBA ComparisonsNBA ComparisonsNBA ComparisonsNBA ComparisonsNBA ComparisonsNBA ComparisonsNBA ComparisonsNBA ComparisonsNBA Comparisons\
-                NBA ComparisonsNBA ComparisonsNBA ComparisonsNBA ComparisonsNBA ComparisonsNBA ComparisonsNBA ComparisonsNBA ComparisonsNBA Comparisons"
-                tools={['breh']}
+                description="Web app for comparing NBA players on statistics for the 2022-2023 regular season. Add up to 3 players to compare toggleable counting and percentage statistics such as minutes per game, points per game, assists per game, rebounds per game, two-point field goal percentage, steals per game, and more. View statistics
+                for the entire season and the past 10 games."
+                tools={['TypeScript', 'React.js', 'Material UI', 'Flask', 'MongoDB', 'Docker']}
             />
             <ProjectCard
                 imageSrc="/assets/monkeypox_dashboard.png"
                 imageAlt="Monkeypox dashboard"
                 title="Monkeypox Dashboard"
-                description="def"
-                tools={['breh']}
+                description="A dashboard for visualizing the 2022 U.S. Monkeypox outbreak. Interact with color-coded map, time-series charts, and statistics tables providing data on a national and statewide level. View predictions for prevelance rate, incidence rate, case-fatality ratio, and cases for the future."
+                tools={['React.js', 'Chakra UI', 'Flask', 'PostgreSQL', 'AWS']}
             />
         </Stack>
     )
