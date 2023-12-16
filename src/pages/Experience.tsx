@@ -47,7 +47,7 @@ const ExperienceBlock = (props: ExperienceBlockProps) => {
 
 const Experience = () => {
     return (
-        <Stack display={'flex'} maxHeight={'100%'} maxWidth={'100%'} justifyContent={'center'}>
+        <Stack maxHeight={'100%'} maxWidth={'100%'} justifyContent={'center'}>
             <Navbar />
             <Stack display={'flex'} maxWidth={'800px'} alignSelf={'center'} justifyContent={'center'} mx={8} mb={16} spacing={12}>
                 <ExperienceBlock

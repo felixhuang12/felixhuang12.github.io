@@ -31,7 +31,7 @@ const Blurb = () => {
 
 const Home = () => {
     return (
-        <Stack maxHeight={'100%'} maxWidth={'100%'} display={'flex'} justifyContent={'center'}>
+        <Stack maxHeight={'100%'} maxWidth={'100%'} justifyContent={'center'}>
             <Navbar />
             <Stack direction={{ base: 'column', md: 'row' }} display={'flex'} justifyContent={'flex-start'}>
                 <Blurb />
