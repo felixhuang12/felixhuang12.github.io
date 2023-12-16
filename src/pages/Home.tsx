@@ -1,9 +1,9 @@
-import { HStack, Heading, Stack, Text } from "@chakra-ui/react";
+import { Heading, Stack, Text } from "@chakra-ui/react";
 import Navbar from "../components/Navbar";
 
 const Blurb = () => {
     return (
-        <Stack ml={16} maxWidth={'40%'}>
+        <Stack mb={16} mx={16} maxWidth={{base: '100%', md: '40%'}}>
             <Heading>
                 Hey! I'm Felix.
             </Heading>
@@ -33,9 +33,9 @@ const Home = () => {
     return (
         <Stack maxHeight={'100%'} maxWidth={'100%'} display={'flex'} justifyContent={'center'}>
             <Navbar />
-            <HStack display={'flex'} justifyContent={'flex-start'}>
+            <Stack direction={{ base: 'column', md: 'row' }} display={'flex'} justifyContent={'flex-start'}>
                 <Blurb />
-            </HStack>
+            </Stack>
         </Stack>
     )
 }
