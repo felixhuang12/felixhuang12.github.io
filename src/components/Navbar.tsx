@@ -16,8 +16,8 @@ const Navbar = () => {
             <Stack direction={{ base: 'column', md: 'row' }}>
                 <MenuLink text="About" link="/" />
                 <MenuLink text="Experience" link="/experience" />
-                <MenuLink text="Projects" link="projects" />
-                <MenuLink text="Contact" link="contact" />
+                <MenuLink text="Projects" link="/projects" />
+                <MenuLink text="Contact" link="/contact" />
             </Stack>
         </Box>
     )
