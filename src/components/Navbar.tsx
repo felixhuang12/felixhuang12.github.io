@@ -1,4 +1,4 @@
-import { Box, Flex, HStack, Stack, Text } from "@chakra-ui/react"
+import { Box, Stack, Text } from "@chakra-ui/react"
 import { Link } from "react-router-dom"
 
 const MenuLink = ({ text, link }: { text: string, link: string }) => {

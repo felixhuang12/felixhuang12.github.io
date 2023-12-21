@@ -103,6 +103,14 @@ const Projects = () => {
                 tools={['React.js', 'Chakra UI', 'Flask', 'PostgreSQL', 'AWS']}
                 ghLink="https://github.com/sakinkirti/monkeypox-dashboard"
             />
+            <ProjectCard
+                imageSrc="/assets/ncbi_gene_mapper.png"
+                imageAlt="NCBI gene scraping"
+                title="NCBI Gene Mapper"
+                description="A scripting tool to convert NCBI sheep LOC genes to human analog genes."
+                tools={['Python', 'pandas']}
+                ghLink="https://github.com/felixhuang12/ncbi-gene-scraping"
+            />
         </Stack>
     )
 }
