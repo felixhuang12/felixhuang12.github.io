@@ -2,13 +2,6 @@ import { VStack, FormControl, Input, FormErrorMessage, Button, Stack, Heading, T
 import { Field, Form, Formik } from "formik"
 import Navbar from "../components/Navbar"
 
-interface ContactFormProps {
-    name: string
-    email: string
-    subject: string
-    message: string
-}
-
 const ContactInput = (props: any) => {
     return (
         <Input {...props} borderWidth={2} />
@@ -43,7 +36,7 @@ const ContactForm = () => {
             {({ handleSubmit, errors, touched }) => (
                 <Form onSubmit={handleSubmit}>
                     <VStack spacing={2} align="flex-start">
-                        <FormControl isInvalid={(!!errors.name) && touched.name}>
+                        <FormControl isInvalid={!!errors.name && touched.name}>
                             <Field
                                 as={ContactInput}
                                 id="name"
@@ -54,7 +47,7 @@ const ContactForm = () => {
                             />
                             <FormErrorMessage>{errors.name}</FormErrorMessage>
                         </FormControl>
-                        <FormControl isInvalid={(errors.email !== undefined && errors.email.length !== 0) && touched.email}>
+                        <FormControl isInvalid={!!errors.email && touched.email}>
                             <Field
                                 as={ContactInput}
                                 id="email"
@@ -65,7 +58,7 @@ const ContactForm = () => {
                             />
                             <FormErrorMessage>{errors.email}</FormErrorMessage>
                         </FormControl>
-                        <FormControl isInvalid={(errors.subject !== undefined && errors.subject.length !== 0) && touched.subject}>
+                        <FormControl isInvalid={!!errors.subject && touched.subject}>
                             <Field
                                 as={ContactInput}
                                 id="subject"
@@ -76,7 +69,7 @@ const ContactForm = () => {
                             />
                             <FormErrorMessage>{errors.subject}</FormErrorMessage>
                         </FormControl>
-                        <FormControl isInvalid={(errors.message !== undefined && errors.message.length !== 0) && touched.message}>
+                        <FormControl isInvalid={!!errors.message && touched.message}>
                             <Field
                                 as={Textarea}
                                 id="message"
