@@ -1,6 +1,15 @@
-import { VStack, FormControl, Input, FormErrorMessage, Button, Stack, Heading, Textarea } from "@chakra-ui/react"
+import { VStack, FormControl, Input, FormErrorMessage, Button, Stack, Heading, Textarea, useToast } from "@chakra-ui/react"
 import { Field, Form, Formik } from "formik"
 import Navbar from "../components/Navbar"
+import emailjs, { EmailJSResponseStatus } from "@emailjs/browser"
+import { useState } from "react"
+
+interface ContactInputProps {
+    name: string,
+    email: string,
+    subject: string,
+    message: string
+}
 
 const ContactInput = (props: any) => {
     return (
@@ -9,13 +18,45 @@ const ContactInput = (props: any) => {
 }
 
 const ContactForm = () => {
+    const [isEmailSending, setIsEmailSending] = useState(false)
+    const toast = useToast()
+
+    const sendEmail = async (input: ContactInputProps) => {
+        try {
+            const emailPromise = emailjs.send(
+                process.env.REACT_APP_EMAILJS_SERVICE_ID!,
+                process.env.REACT_APP_EMAILJS_TEMPLATE_ID!,
+                {
+                    from_name: input.name,
+                    to_name: "Felix",
+                    email_address: input.email,
+                    subject: input.subject,
+                    message: input.message
+                },
+                process.env.REACT_APP_EMAILJS_API_KEY!)
+
+            const timeoutPromise = new Promise((_, reject) => {
+                setTimeout(() => {
+                    reject(new Error('Email sending timed out'));
+                }, 10000)
+            })
+
+            const result = await Promise.race([emailPromise, timeoutPromise])
+
+            if (result == null || (result as EmailJSResponseStatus).status !== 200) {
+                return false
+            }
+            return true
+        } catch (error) {
+            return false
+        }
+    }
+
     const validate = (value: string) => {
         let error
-
         if (!value) {
             error = "Required"
         }
-
         return error
     }
 
@@ -27,10 +68,29 @@ const ContactForm = () => {
                 subject: "",
                 message: ""
             }}
-            onSubmit={(values, actions) => {
-                console.log({ values, actions });
-                alert(JSON.stringify(values, null, 2));
-                actions.setSubmitting(false);
+            onSubmit={async (values, actions) => {
+                setIsEmailSending(true)
+                const emailSent = await sendEmail(values)
+                actions.setSubmitting(false)
+                if (emailSent) {
+                    toast({
+                        title: 'Message sent!',
+                        description: "I'll be in touch shortly.",
+                        status: 'success',
+                        duration: 5000,
+                        isClosable: true,
+                    })
+                    actions.resetForm()
+                } else {
+                    toast({
+                        title: 'Failed to send message.',
+                        description: "Try again later.",
+                        status: 'error',
+                        duration: 5000,
+                        isClosable: true,
+                    })
+                }
+                setIsEmailSending(false)
             }}
         >
             {({ handleSubmit, errors, touched }) => (
@@ -83,7 +143,7 @@ const ContactForm = () => {
                             />
                             <FormErrorMessage>{errors.message}</FormErrorMessage>
                         </FormControl>
-                        <Button type="submit" colorScheme="orange" mt={4}>
+                        <Button type="submit" colorScheme="orange" mt={4} isLoading={isEmailSending}>
                             Send message
                         </Button>
                     </VStack>
