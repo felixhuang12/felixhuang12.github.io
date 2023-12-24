@@ -1,9 +1,12 @@
-import { Heading, Stack, Text } from "@chakra-ui/react";
-import Navbar from "../components/Navbar";
+import { Heading, Image, Link, Stack, Text } from "@chakra-ui/react"
+import Navbar from "../components/Navbar"
+import { FaLinkedin } from "react-icons/fa"
+import { FaGithub } from "react-icons/fa"
+import { FaStrava } from "react-icons/fa"
 
 const Blurb = () => {
     return (
-        <Stack mb={16} mx={16} maxWidth={{base: '100%', md: '40%'}}>
+        <Stack mb={16} mx={16} maxWidth={{ base: '100%', lg: '40%' }}>
             <Heading>
                 Hey! I'm Felix.
             </Heading>
@@ -13,12 +16,12 @@ const Blurb = () => {
                 </Text>
                 <Text>
                     I'm an aspiring software engineer that seeks to contribute to efforts in building solutions to real-world problems that can help make people's
-                    lives more convenient and enjoyable. There are so many ways to make a difference in people's lives, but, for me, technology and software are 
-                    some of the more comfortable mediums that I feel I can utilize to help others. 
-                    I love building and problem-solving, and I'm always curious and learning how to better both myself and others through what I create or contribute to. 
+                    lives more convenient and enjoyable. There are so many ways to make a difference in people's lives, but, for me, technology and software are
+                    some of the more comfortable mediums that I feel I can utilize to help others.
+                    I love building and problem-solving, and I'm always curious and learning how to better both myself and others through what I create or contribute to.
                 </Text>
                 <Text>
-                    Enough about tech though--I also love to run, play any sport really (basketball is probably my main thing, but lowkey been kinda getting into volleyball), bake, 
+                    In my free time, I also love to run, play any sport really (basketball is probably my main thing, but lowkey been kinda getting into volleyball), bake,
                     and take photos.
                 </Text>
                 <Text>
@@ -33,7 +36,21 @@ const Home = () => {
     return (
         <Stack maxHeight={'100%'} maxWidth={'100%'} justifyContent={'center'}>
             <Navbar />
-            <Stack direction={{ base: 'column', md: 'row' }} display={'flex'} justifyContent={'flex-start'}>
+            <Stack direction={{ base: 'column', lg: 'row' }} justifyContent={'center'} alignItems={'center'}>
+                <Stack justifyContent={'center'} alignItems={'center'}>
+                    <Image src="/assets/profile.png" borderRadius='full' boxSize={{ base: '300px', lg: '400px' }} mx={6} mb={6} />
+                    <Stack direction={'row'}>
+                        <Link href="https://www.linkedin.com/in/felix-huang-1b9946190" isExternal={true}>
+                            <FaLinkedin size={32} />
+                        </Link>
+                        <Link href="https://github.com/felixhuang12" isExternal={true}>
+                            <FaGithub size={32} />
+                        </Link>
+                        <Link href="https://www.strava.com/athletes/121674283" isExternal={true}>
+                            <FaStrava size={32} />
+                        </Link>
+                    </Stack>
+                </Stack>
                 <Blurb />
             </Stack>
         </Stack>
