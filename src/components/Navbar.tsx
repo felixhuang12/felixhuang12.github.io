@@ -12,7 +12,7 @@ const MenuLink = ({ text, link }: { text: string, link: string }) => {
 
 const Navbar = () => {
     return (
-        <Box display={{ md: 'flex' }} maxHeight={'10%'} maxWidth={'100%'} alignItems={'center'} justifyContent={'flex-end'} m={6} alignSelf={{ base: 'center', md: 'flex-end' }}>
+        <Box display={{ md: 'flex' }} maxHeight={'10%'} maxWidth={'100%'} alignItems={'center'} justifyContent={'flex-end'} mx={6} my={4} alignSelf={{ base: 'center', md: 'flex-end' }}>
             <Stack direction={{ base: 'column', md: 'row' }}>
                 <MenuLink text="About" link="/" />
                 <MenuLink text="Experience" link="/experience" />

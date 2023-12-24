@@ -1,4 +1,4 @@
-import { Stack, Text, HStack, Tag, Box } from "@chakra-ui/react"
+import { Stack, Text, HStack, Tag, Box, Heading } from "@chakra-ui/react"
 import Navbar from "../components/Navbar"
 
 interface ExperienceBlockProps {
@@ -49,6 +49,7 @@ const Experience = () => {
     return (
         <Stack maxHeight={'100%'} maxWidth={'100%'} justifyContent={'center'} alignItems={'center'}>
             <Navbar />
+            <Heading mb={4}>Experience</Heading>
             <Stack display={'flex'} maxWidth={'800px'} justifyContent={'center'} mx={8} mb={16} spacing={12}>
                 <ExperienceBlock
                     startAndEndDateText={"May — Aug 2023"}

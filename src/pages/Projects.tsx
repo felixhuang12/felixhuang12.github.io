@@ -39,9 +39,9 @@ const ProjectCard = (props: ProjectCardProps) => {
             />
             <CardBody ml={{ base: 0, md: 8 }} mt={{ base: 8, md: 0 }} p={1}>
                 <Stack>
-                    <Heading>
+                    <Text fontSize={24} as={'b'}>
                         {props.title}
-                    </Heading>
+                    </Text>
                     <Text>
                         {props.description}
                     </Text>
@@ -84,8 +84,9 @@ const ProjectCard = (props: ProjectCardProps) => {
 
 const Projects = () => {
     return (
-        <Stack maxHeight={'100%'} maxWidth={'100%'} justifyContent={'center'}>
+        <Stack maxHeight={'100%'} maxWidth={'100%'} justifyContent={'center'} alignItems={'center'}>
             <Navbar />
+            <Heading mb={4}>Projects</Heading>
             <ProjectCard
                 imageSrc="/assets/nba_comps_dashboard.png"
                 imageAlt="NBA Comparisons dashboard"
