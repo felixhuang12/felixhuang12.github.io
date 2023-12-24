@@ -26,12 +26,12 @@ const ExperienceBlock = (props: ExperienceBlockProps) => {
                 <Text mt={3}>
                     {props.description}
                 </Text>
-                <Box display={'inline-block'}>
+                <Box display={'inline-block'} mt={2}>
                     {props.tools.map((tool) => (
                         <Tag size={{ base: 'xs', sm: 'sm', md: 'md' }}
                             key={tool}
-                            mt={4}
                             mr={4}
+                            mt={2}
                             p={2}
                             colorScheme={'orange'}
                             fontWeight={'medium'}
@@ -55,8 +55,9 @@ const Experience = () => {
                     jobTitle={"Software Development Engineer Intern"}
                     company={"Amazon Web Services"}
                     description={"Designed and developed a load test monitoring dashboard for Amazon Connect. \
+                    Developed a data pipeline to stream millions of daily real-time event records from Connect instances and load tests to batch process the data. \
                     Tracked and displayed the metrics outputted from load generated (agents, calls, chats, tasks, etc.) and outcome metrics."}
-                    tools={["AWS CDK", "AWS", "Java", "TypeScript"]}
+                    tools={["Java", "TypeScript", "AWS CDK", "Amazon OpenSearch Service", "Amazon Kinesis Data Streams", "AWS Lambda"]}
                 />
                 <ExperienceBlock
                     startAndEndDateText={"Jun — Aug 2022"}
