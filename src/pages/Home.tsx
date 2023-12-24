@@ -22,7 +22,7 @@ import { FaGitAlt } from "react-icons/fa"
 const Blurb = () => {
     return (
         <Stack mb={8} mx={16} maxWidth={{ base: '100%', lg: '40%' }}>
-            <Heading>
+            <Heading fontSize={48}>
                 Hey! I'm Felix.
             </Heading>
             <Stack spacing={4}>
