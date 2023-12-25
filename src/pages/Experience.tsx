@@ -1,5 +1,4 @@
 import { Stack, Text, HStack, Tag, Box, Heading } from "@chakra-ui/react"
-import Navbar from "../components/Navbar"
 
 interface ExperienceBlockProps {
     startAndEndDateText: string,
@@ -11,8 +10,15 @@ interface ExperienceBlockProps {
 
 const ExperienceBlock = (props: ExperienceBlockProps) => {
     return (
-        <HStack display={'flex'} justifyContent={'center'} alignItems={'flex-start'} spacing={8}
-            fontSize={{ base: 'xs', sm: 'md', md: 'l' }}>
+        <HStack justifyContent={'center'}
+            alignItems={'flex-start'}
+            spacing={8}
+            fontSize={{ base: 'xs', sm: 'md', md: 'l' }}
+            filter={"grayscale(100%)"}
+            _hover={{
+                filter: "none"
+            }}
+        >
             <Text fontWeight={'bold'} color={'grey'} minWidth={'20%'}>
                 {props.startAndEndDateText}
             </Text>
@@ -33,7 +39,8 @@ const ExperienceBlock = (props: ExperienceBlockProps) => {
                             mr={4}
                             mt={2}
                             p={2}
-                            colorScheme={'orange'}
+                            bgColor="#EFDECD"
+                            textColor={'#4B3621'}
                             fontWeight={'medium'}
                         >
                             {tool}
@@ -48,9 +55,8 @@ const ExperienceBlock = (props: ExperienceBlockProps) => {
 const Experience = () => {
     return (
         <Stack maxHeight={'100%'} maxWidth={'100%'} justifyContent={'center'} alignItems={'center'}>
-            <Navbar />
-            <Heading mb={4}>Experience</Heading>
-            <Stack display={'flex'} maxWidth={'800px'} justifyContent={'center'} mx={8} mb={16} spacing={12}>
+            <Heading id="experience" fontSize={44} mb={4}>Experience</Heading>
+            <Stack display={'flex'} maxWidth={'800px'} justifyContent={'center'} spacing={12}>
                 <ExperienceBlock
                     startAndEndDateText={"May — Aug 2023"}
                     jobTitle={"Software Development Engineer Intern"}

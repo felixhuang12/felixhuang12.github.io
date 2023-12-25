@@ -1,5 +1,4 @@
 import { Card, CardBody, Heading, Image, Stack, Text, Box, Tag, TagLeftIcon, TagLabel } from "@chakra-ui/react"
-import Navbar from "../components/Navbar"
 import { openInNewTab } from "../utils/commonUtils"
 import { LinkIcon } from "@chakra-ui/icons"
 
@@ -22,7 +21,13 @@ const ProjectCard = (props: ProjectCardProps) => {
             p={4}
             m={8}
             transition={'transform 0.3s ease-in-out'}
-            _hover={{ transform: "scale(1.02)", bgColor: '#FFFAF0', cursor: props.ghLink ? 'pointer' : 'default' }}
+            filter={"grayscale(100%)"}
+            _hover={{ 
+                transform: "scale(1.02)", 
+                bgColor: '#FFFAF0', 
+                cursor: props.ghLink ? 'pointer' : 'default',
+                filter: "none"
+             }}
             onClick={() => {
                 if (props.ghLink && props.ghLink.length > 0) {
                     openInNewTab(props.ghLink)
@@ -49,9 +54,16 @@ const ProjectCard = (props: ProjectCardProps) => {
                         <Tag size={{ base: 'xs', sm: 'sm', md: 'md' }}
                             mt={4}
                             p={2}
-                            colorScheme={'gray'}
+                            bgColor={"transparent"}
                             fontWeight={'medium'}
-                            _hover={{bgColor: '#E2E8F0'}}
+                            textDecoration={"underline"}
+                            bgImage={"linear(to-r, #FFEF8D 50%, transparent 50%)"}
+                            bgSize="0 100%"
+                            bgRepeat={"no-repeat"}
+                            transitionDuration='0.4s'
+                            _hover={{
+                                bgSize: "200% 100%"
+                            }}
                             onClick={() => {
                                 if (props.ghLink && props.ghLink.length > 0) {
                                     openInNewTab(props.ghLink)
@@ -69,7 +81,8 @@ const ProjectCard = (props: ProjectCardProps) => {
                                 mt={4}
                                 mr={4}
                                 p={2}
-                                colorScheme={'orange'}
+                                bgColor="#EFDECD"
+                                textColor={'#4B3621'}
                                 fontWeight={'medium'}
                             >
                                 {tool}
@@ -85,8 +98,7 @@ const ProjectCard = (props: ProjectCardProps) => {
 const Projects = () => {
     return (
         <Stack maxHeight={'100%'} maxWidth={'100%'} justifyContent={'center'} alignItems={'center'}>
-            <Navbar />
-            <Heading mb={4}>Projects</Heading>
+            <Heading id="projects">Projects</Heading>
             <ProjectCard
                 imageSrc="/assets/nba_comps_dashboard.png"
                 imageAlt="NBA Comparisons dashboard"

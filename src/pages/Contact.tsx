@@ -1,6 +1,5 @@
 import { VStack, FormControl, Input, FormErrorMessage, Button, Stack, Heading, Textarea, useToast } from "@chakra-ui/react"
 import { Field, Form, Formik } from "formik"
-import Navbar from "../components/Navbar"
 import emailjs, { EmailJSResponseStatus } from "@emailjs/browser"
 import { useState } from "react"
 
@@ -143,7 +142,7 @@ const ContactForm = () => {
                             />
                             <FormErrorMessage>{errors.message}</FormErrorMessage>
                         </FormControl>
-                        <Button type="submit" colorScheme="orange" mt={4} isLoading={isEmailSending}>
+                        <Button type="submit" bgColor="#EFDECD" textColor={'#4B3621'} _hover={{ bgColor: '#F7F1E0' }} mt={4} isLoading={isEmailSending}>
                             Send message
                         </Button>
                     </VStack>
@@ -155,10 +154,9 @@ const ContactForm = () => {
 
 const Contact = () => {
     return (
-        <Stack maxHeight={'100%'} maxWidth={'100%'} justifyContent={'center'} alignItems={'center'}>
-            <Navbar />
-            <Stack p={6} rounded="md" width={{ base: '90%', md: '40%' }}>
-                <Heading mb={4}>Let's get in touch!</Heading>
+        <Stack maxHeight={'100%'} maxWidth={'100%'} justifyContent={'center'} alignItems={'center'} mb={8}>
+            <Stack rounded="md" width={{ base: '90%', md: '40%' }}>
+                <Heading id="contact-me" fontSize={44} mb={4} alignSelf={'center'}>Let's get in touch!</Heading>
                 <ContactForm />
             </Stack>
         </Stack>
