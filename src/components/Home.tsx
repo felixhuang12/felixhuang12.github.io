@@ -1,5 +1,5 @@
 import { Stack } from "@chakra-ui/react"
-import Navbar from "../components/Navbar"
+import Navbar from "./Navbar"
 import Experience from "./Experience"
 import Projects from "./Projects"
 import Contact from "./Contact"
