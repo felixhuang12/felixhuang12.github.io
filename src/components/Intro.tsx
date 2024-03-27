@@ -1,5 +1,5 @@
 import { Heading, Image, Link, Stack, Text } from "@chakra-ui/react"
-import { FaLinkedin, FaGithub, FaStrava } from "react-icons/fa"
+import { FaLinkedin, FaGithub } from "react-icons/fa"
 
 const Blurb = () => {
     return (
@@ -71,24 +71,6 @@ const Intro = () => {
                             <FaGithub size={32} />
                             <Text>
                                 GitHub
-                            </Text>
-                        </Stack>
-                    </Link>
-                    <Link href="https://www.strava.com/athletes/121674283" isExternal={true}>
-                        <Stack direction={'row'}
-                            justifyContent={'center'}
-                            alignItems={'center'}
-                            bgImage={"linear(to-r, #FFEF8D 50%, transparent 50%)"}
-                            bgSize="0 100%"
-                            bgRepeat={"no-repeat"}
-                            transitionDuration='0.4s'
-                            _hover={{
-                                bgSize: "200% 100%"
-                            }}
-                        >
-                            <FaStrava size={32} />
-                            <Text>
-                                Strava
                             </Text>
                         </Stack>
                     </Link>
