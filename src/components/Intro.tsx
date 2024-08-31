@@ -9,12 +9,10 @@ const Blurb = () => {
             </Heading>
             <Stack spacing={4}>
                 <Text>
-                    I'm currently a fourth-year undergraduate student at Case Western Reserve University where I'm studying computer science with a concentration in software engineering.
+                    Software Engineer @ AWS AppStream 2.0
                 </Text>
                 <Text>
-                    I'm an aspiring software engineer that seeks to contribute to efforts in building solutions to real-world problems that can help make people's
-                    lives more convenient and enjoyable.
-                    I love building and problem-solving, and I'm always curious and learning how to better both myself and others through what I create or contribute to.
+                    Exploring and learning. One day at a time.
                 </Text>
             </Stack>
         </Stack>
